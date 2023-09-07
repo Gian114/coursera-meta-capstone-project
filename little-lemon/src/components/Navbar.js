@@ -1,27 +1,27 @@
 import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
     <nav className='bg-white p-4'>
-      <div className='container flex justify-center'>
+      <div className='container flex justify-center space-x-8'>
         <img src={logo} alt="logo" />
         <ul className='flex space-x-4 pt-2 pl-4 font-sans font-semibold'>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/menu">Menu</a>
+            <Link to="/menu">Menu</Link>
           </li>
           <li>
-            <a href="/reservation">Reservation</a>
+            <Link to="/reservation">Reservation</Link>
           </li>
           <li>
-            <a href="/login">Login</a>
+            <Link to="/login">Login</Link>
           </li>
-
         </ul>
       </div>
     </nav>
