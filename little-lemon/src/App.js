@@ -6,6 +6,7 @@ import About from './pages/About.js';
 import Menu from './pages/Menu.js';
 import Reservation from './pages/Reservation.js';
 import Login from './pages/Login.js';
+import FooterNav from './components/FooterNav.js';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       </Routes>
     </main>
     <footer>
-      {/* To be Addedd */}
+      <FooterNav />
     </footer>
     </>
   );
