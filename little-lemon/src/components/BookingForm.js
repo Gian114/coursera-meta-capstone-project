@@ -1,17 +1,6 @@
 import React, { useState } from 'react';
 
-function BookingForm() {
-
-    const cdate = new Date();
-
-    let day = cdate.getDate();
-    let month = cdate.getMonth() + 1;
-    let year = cdate.getFullYear();
-// This arrangement can be altered based on how we want the date's format to appear.
-    let currentDate = `${day}-${month}-${year}`;
-
-    const [date, setDate] = useState(currentDate);
-    const [availableTime, setTime] = useState('17'); //here you should handle time slots not available
+function BookingForm(props) {
     const [guests, setGuests] = useState('2');
     const [occasion, setOccasion] = useState('Birthday');
 
@@ -20,10 +9,10 @@ function BookingForm() {
     return (
         <form className="grid gap-5 max-w-52 mx-16 mt-8">
             <label className='block text-gray-700 text-sm font-bold mb-2'>Date:</label>
-            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required placeholder='Date'
+            <input type="date" value={props.dateTime.date} onChange={(e) => props.dispatch({type: 'date', value: e.target.value })} required 
                 className='block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline' />
             <label className='block text-gray-700 text-sm font-bold mb-2'>Choose Time:</label>
-            <select value={availableTime} onChange={(event) => setTime(event.target.value)}
+            <select value={props.dateTime.time} onChange={(event) => props.dispatch({type: 'time', value: event.target.value})}
                 className='block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline'>
                 <option value="17">17:00</option>
                 <option value="18">18:00</option>
