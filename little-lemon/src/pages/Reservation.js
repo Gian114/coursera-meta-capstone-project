@@ -1,6 +1,9 @@
+import BookingForm from "../components/BookingForm";
+
 function Reservation() {
+  
     return (
-     <h1>Reservation</h1>
+      <BookingForm />
     )
   }
   
