@@ -26,7 +26,8 @@ function BookingForm(props) {
                 <option value="Anniversary">Anniversary</option>
                 <option value="Wedding">Wedding</option>
             </select>
-            <input className='bg-lemongreen hover:bg-green-700 text-white font-bold py-2 px-16 justify-center rounded focus:outline-none focus:shadow-outline' type="submit" value="Submit" />
+            <input className='bg-lemongreen hover:bg-green-700 text-white font-bold py-2 px-16 justify-center rounded focus:outline-none focus:shadow-outline' type="submit" value="Submit" 
+            onClick={(e) => props.handleSubmit(e)} />
         </form>   
     )
 }

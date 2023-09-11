@@ -48,13 +48,14 @@ const availableTimesByDate = {
     })
   }
 
-  const submitAPI = (formData) => {
+  const submitAPI = (date, timer) => {
+    console.log(date, timer);
     
-    availableTimesByDate[formData.date] = availableTimesByDate[formData.date].filter(time => time !== formData.time);
+    availableTimesByDate[date] = availableTimesByDate[date].filter(time => time !== timer);
 
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (formData) {
+        if (date) {
           resolve(true); // Simulate successful submission
         } else {
           reject(new Error('Form submission failed.'));

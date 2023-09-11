@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import BookingForm from "../components/BookingForm";
-import { fetchAPI } from "../mockAPI";
+import { fetchAPI, submitAPI } from "../mockAPI";
 
 //fetch API should be valid only for the semptember
 function Reservation() {
@@ -42,9 +42,17 @@ function Reservation() {
   const handleTimeChange = (newTime) => {
     dispatch({ type: 'time', date: dateTime.date, availableTime: dateTime.availableTime, time: newTime });
   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submitAPI(dateTime.date, dateTime.currentTime).then((res) => {
+      res ? alert('Form submitted successfully.') : alert('Form submission failed.')
+      handleDateChange(dateTime.date);
+    });
+  }
   
     return (
-      <BookingForm dateTime={dateTime} handleDateChange={handleDateChange} handleTimeChange={handleTimeChange}/>
+      <BookingForm dateTime={dateTime} handleDateChange={handleDateChange} handleTimeChange={handleTimeChange} handleSubmit={handleSubmit}/>
     )
   }
   
