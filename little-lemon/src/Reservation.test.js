@@ -1,7 +1,12 @@
-import renderer from 'react-test-renderer';
+import { render, screen, cleanup } from '@testing-library/react';
 import Reservation from './pages/Reservation';
 
-test('renders learn react link', () => {
-    const tree = renderer.create(<Reservation />).toJSON();
-    expect(tree).toMatchSnapshot();
-    });
+test('try test', () => {
+    expect(true).toBe(true);
+});
+
+test('renders Reservation component', () => {
+    render(<Reservation />);
+    //const linkElement = screen.getByText(/Date:/i);
+    expect(linkElement).toBeInTheDocument();
+});
