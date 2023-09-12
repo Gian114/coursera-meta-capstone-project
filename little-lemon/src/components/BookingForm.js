@@ -4,6 +4,7 @@ function BookingForm(props) {
     const [guests, setGuests] = useState('2');
     const [occasion, setOccasion] = useState('Birthday');
 
+    //other fields are selected by choose that we give to user so validation is not needed but eventually should be added
     function validateForm(event) {
         event.preventDefault();
         if (guests >= 1 && guests <= 6) {
