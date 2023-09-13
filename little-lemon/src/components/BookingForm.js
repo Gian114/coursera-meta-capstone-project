@@ -17,7 +17,7 @@ function BookingForm(props) {
     return (  
         <form className="grid gap-5 max-w-52 mx-16 mt-8">
             <label className='block text-gray-700 text-sm font-bold mb-2'>Date:</label>
-            <input type="date" value={props.dateTime.date} onChange={(e) => props.handleDateChange(e.target.value)} required 
+            <input type="date" aria-label='Date' value={props.dateTime.date} onChange={(e) => props.handleDateChange(e.target.value)} required 
                 className='block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline' />
             <label className='block text-gray-700 text-sm font-bold mb-2'>Choose Time:</label>
             <select value={props.dateTime.currentTime} onChange={(event) => props.handleTimeChange(event.target.value)}
